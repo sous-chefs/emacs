@@ -6,6 +6,6 @@ version           "0.8.2"
 
 recipe "emacs", "Installs Emacs"
 
-%w{ ubuntu debian redhat centos scientific fedora freebsd }.each do |os|
+%w{ ubuntu debian redhat centos scientific fedora arch freebsd }.each do |os|
   supports os
 end
