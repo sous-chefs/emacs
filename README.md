@@ -9,7 +9,7 @@ Requirements
 ## Platform
 
 * Debian/Ubuntu
-* Red Hat/CentOS/Scientific/Fedora
+* Red Hat/CentOS/Scientific/Fedora/Arch
 * FreeBSD
 
 Should work on any platform that has a default provider for the `package` resource and a package named `emacs` avaialble in the default package manager repository.
