@@ -20,13 +20,7 @@
 node['emacs']['packages'].each do |pkg|
 
   package pkg do
-    case node['platform']
-    when "freebsd"
-      source "ports"
-      action :install
-    else
-      action :upgrade
-    end
+    source "ports" if platform?('freebsd')
   end
 
 end
