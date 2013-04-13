@@ -1,3 +1,7 @@
+## v0.9.0:
+
+* [COOK-2710] - use default action for package
+
 ## v0.8.4:
 
 * [COOK-1601] - Install Emacs without X support by default on Arch
