@@ -45,3 +45,6 @@ AllCops:
 Style/GuardClause:
   Enabled: false
 
+Style/SingleSpaceBeforeFirstArg:
+  Exclude:
+    - metadata.rb

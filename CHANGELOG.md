@@ -1,3 +1,10 @@
+## v0.10.0:
+
+* Clean up the attributes
+* Use platform family for the conditional
+* Default to Emacs 24 on Debian
+* Update test harness
+
 ## v0.9.0:
 
 * [COOK-2710] - use default action for package
