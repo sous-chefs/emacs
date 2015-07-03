@@ -18,9 +18,7 @@
 #
 
 node['emacs']['packages'].each do |pkg|
-
   package pkg do
-    source "ports" if platform?('freebsd') and node.platform_version.to_f < 10.0
+    source 'ports' if platform?('freebsd') && node['platform_version'].to_f < 10.0
   end
-
 end
