@@ -11,5 +11,8 @@ platforms:
 suites:
 - name: default
   run_list:
-  - recipe[test]
-  - recipe[emacs]
+    - recipe[test]
+    - recipe[emacs]
+  attributes:
+    emacs:
+      disable_backups: true

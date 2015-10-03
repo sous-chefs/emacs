@@ -26,3 +26,15 @@ default['emacs']['packages'] = case node['platform_family']
                                else
                                  ['emacs']
                                end
+
+case node['platform_family']
+when 'debian'
+  default['emacs']['site-start-path'] = '/etc/emacs/site-start.d'
+when 'rhel', 'fedora', 'arch'
+  default['emacs']['site-start-path'] = '/usr/share/emacs/site-lisp/site-start.d'
+else
+  default['emacs']['site-start-path'] = nil
+  Chef::Log.warn("site-start path not known for platform #{node['platform_family']}, please add it.")
+end
+
+default['emacs']['disable_backups'] = false
