@@ -1,3 +1,10 @@
+## Unreleased
+
+- resolved cookstyle error: metadata.rb:4:19 refactor: `ChefSharing/InvalidLicenseString`
+- resolved cookstyle error: metadata.rb:8:1 refactor: `ChefRedundantCode/RecipeMetadata`
+- resolved cookstyle error: recipes/default.rb:2:1 refactor: `ChefStyle/CommentFormat`
+- resolved cookstyle error: recipes/default.rb:5:1 refactor: `ChefStyle/CommentFormat`
+
 ## v0.10.0:
 
 * Clean up the attributes
