@@ -1,31 +1,33 @@
-## Unreleased
+# Changelog
+
+## 0.11.0 (2020-05-05)
 
 - resolved cookstyle error: metadata.rb:4:19 refactor: `ChefSharing/InvalidLicenseString`
 - resolved cookstyle error: metadata.rb:8:1 refactor: `ChefRedundantCode/RecipeMetadata`
 - resolved cookstyle error: recipes/default.rb:2:1 refactor: `ChefStyle/CommentFormat`
 - resolved cookstyle error: recipes/default.rb:5:1 refactor: `ChefStyle/CommentFormat`
 
-## v0.10.0:
+## 0.10.0
 
-* Clean up the attributes
-* Use platform family for the conditional
-* Default to Emacs 24 on Debian
-* Update test harness
+- Clean up the attributes
+- Use platform family for the conditional
+- Default to Emacs 24 on Debian
+- Update test harness
 
-## v0.9.0:
+## 0.9.0
 
-* [COOK-2710] - use default action for package
+- [COOK-2710] - use default action for package
 
-## v0.8.4:
+## 0.8.4
 
-* [COOK-1601] - Install Emacs without X support by default on Arch
+- [COOK-1601] - Install Emacs without X support by default on Arch
   linux
 
-## v0.8.2:
+## 0.8.2
 
-* [COOK-551] - FreeBSD Support
-* [COOK-839] - install non-X11 package by setting an attribute
+- [COOK-551] - FreeBSD Support
+- [COOK-839] - install non-X11 package by setting an attribute
 
-## v0.7.0:
+## 0.7.0
 
-* Initial public release
+- Initial public release
