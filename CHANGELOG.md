@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Standardise files with files in sous-chefs/repo-management
+
 ## 0.11.0 (2020-05-05)
 
 - resolved cookstyle error: metadata.rb:4:19 refactor: `ChefSharing/InvalidLicenseString`
