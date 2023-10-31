@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.11.8 - *2023-10-31*
 
 Fix metadata for supermarket
 
