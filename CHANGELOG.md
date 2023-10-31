@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+Fix metadata for supermarket
+
 ## 0.11.7 - *2023-09-29*
 
 ## 0.11.6 - *2023-05-03*
