@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.12](https://github.com/sous-chefs/emacs/compare/0.11.11...v0.11.12) (2025-10-15)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#43](https://github.com/sous-chefs/emacs/issues/43)) ([9703da2](https://github.com/sous-chefs/emacs/commit/9703da286a12911bdd97012ad7925a92c8ce9f57))
+
 ## 0.11.8 - *2023-10-31*
 
 Fix metadata for supermarket
