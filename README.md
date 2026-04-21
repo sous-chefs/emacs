@@ -2,6 +2,15 @@
 
 Installs the "emacs" package to install the worlds most flexible, customizable text editor.
 
+## Breaking Change
+
+Upgrading to the next major version of this cookbook is a breaking change. Older versions use
+`recipe[emacs]` / `recipe[emacs::default]` and the `node['emacs']['packages']` attribute. The
+custom-resource migration removes that interface, so wrapper cookbooks, roles, environments, and
+Policyfiles must be updated to use the `emacs_package` resource before you upgrade.
+
+See [migration.md](migration.md) for the required changes.
+
 ## Requirements
 
 ## Platform
