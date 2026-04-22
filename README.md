@@ -1,43 +1,83 @@
-# Description
+# emacs cookbook
 
-Installs the "emacs" package to install the worlds most flexible, customizable text editor.
+Install Emacs from the platform package manager with the `emacs_package` custom resource.
+
+## Breaking Change
+
+Upgrading from older versions of this cookbook is a breaking change. The
+custom-resource release removes the top-level `recipes/` and `attributes/`
+interface, so existing `recipe[emacs]` usage and `node['emacs']['packages']`
+attribute overrides are no longer the supported configuration path.
+
+Before promoting this version, update wrapper cookbooks, roles, and Policyfiles
+to use the `emacs_package` resource documented in [migration.md](migration.md).
 
 ## Requirements
 
-## Platform
+* Chef Infra Client 15.3+
 
-* Debian/Ubuntu
-* Red Hat/CentOS/Scientific/Fedora/Arch
+## Supported Platforms
+
+* AlmaLinux 9+
+* Debian 12+
+* Fedora
 * FreeBSD
+* Red Hat Enterprise Linux 9+
+* Ubuntu 22.04+
+* Arch Linux
 
-Should work on any platform that has a default provider for the `package` resource and a package named `emacs` avaialble in the default package manager repository.
+This cookbook relies on distro package repositories. See [LIMITATIONS.md](LIMITATIONS.md) for
+package naming and repository constraints.
 
-On FreeBSD, Chef version 0.10.6 is required for fixes to the ports package provider.
+## Resource
 
-## Attributes
+### `emacs_package`
 
-* `node['emacs']['packages']` - An array of Emacs package names to install. Defaults to the "No X11" name based on platform and falls back to "emacs".
+Installs or removes Emacs packages.
 
-## Recipes
+#### Properties
 
-### default
+* `packages` - String or Array of package names to manage. Defaults to a platform-specific package list.
 
-Installs the emacs package.
+Default package mapping:
 
-### Usage
+* Debian/Ubuntu: `emacs-nox`
+* Fedora: `emacs-nw`
+* Other supported platforms: `emacs`
 
-Simply add `recipe[emacs]` to the run list of a base role that gets applied to all systems. Modify the `node['emacs']['packages']` attribute if the default package name for your platform is unavailable or incorrect (see `attributes/default.rb`). You should modify this with an attribute in a role applied to the node. For example:
+#### Actions
 
-    name "base"
-    description "base role is applied to all nodes"
-    run_list("recipe[emacs]")
-    default_attributes(
-      "emacs" => {
-        "packages" => ["emacs-nox"]
-      }
-    )
+* `:install` - Install Emacs packages
+* `:remove` - Remove Emacs packages
 
-As this is an array you can append other emacs-related packages, such as to make configuration modes available.
+## Usage
+
+Install the default Emacs package for the current platform:
+
+```ruby
+emacs_package 'default'
+```
+
+Override the package list when a platform uses a different repository layout:
+
+```ruby
+emacs_package 'default' do
+  packages %w(emacs emacs-common-non-dfsg)
+end
+```
+
+Remove Emacs packages:
+
+```ruby
+emacs_package 'default' do
+  action :remove
+end
+```
+
+For upgrades from the legacy recipe and attribute interface, follow
+[migration.md](migration.md).
+
+Resource-specific documentation is available in [documentation/emacs_package.md](documentation/emacs_package.md).
 
 ## Contributors
 

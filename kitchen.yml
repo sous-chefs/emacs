@@ -1,15 +1,39 @@
 ---
-driver_plugin: vagrant
-driver_config:
-  require_chef_omnibus: true
+driver:
+  name: dokken
+  privileged: true
+  chef_image: chef/chef
+  chef_version: current
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+  chef_license: accept
+  enforce_idempotency: true
+  multiple_converge: 2
+  deprecations_as_errors: true
+
+verifier:
+  name: inspec
+  sudo: true
 
 platforms:
-  - name: ubuntu-20.04
-  - name: debian-10
-  - name: centos-stream-9
+  - name: almalinux-9
+  - name: debian-12
+  - name: ubuntu-24.04
+
+x-run_lists:
+  default: &default_run_list
+    - recipe[test::default]
+
+x-verifiers:
+  default: &default_verifier
+    inspec_tests:
+      - path: test/integration/default
 
 suites:
   - name: default
-    run_list:
-      - recipe[test]
-      - recipe[emacs]
+    run_list: *default_run_list
+    verifier: *default_verifier
