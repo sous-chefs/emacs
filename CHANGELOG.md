@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/sous-chefs/emacs/compare/v0.11.12...v1.0.0) (2026-04-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate emacs to custom resource ([#48](https://github.com/sous-chefs/emacs/issues/48))
+
+### Features
+
+* migrate emacs to custom resource ([#48](https://github.com/sous-chefs/emacs/issues/48)) ([632768e](https://github.com/sous-chefs/emacs/commit/632768e4c19343d37811d8a07253abd4995464b4))
+
 ## [0.11.12](https://github.com/sous-chefs/emacs/compare/0.11.11...v0.11.12) (2025-10-15)
 
 
