@@ -26,7 +26,7 @@ to use the `emacs_package` resource documented in [migration.md](migration.md).
 * Ubuntu 22.04+
 * Arch Linux
 
-This cookbook relies on distro package repositories. See [LIMITATIONS.md](LIMITATIONS.md) for
+This cookbook relies on distro package repositories. See [AGENTS.md](AGENTS.md) for
 package naming and repository constraints.
 
 ## Resource
